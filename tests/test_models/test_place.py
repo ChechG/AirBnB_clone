@@ -95,6 +95,11 @@ class TestingPlace(unittest.TestCase):
         my_place11 = Place()
         self.assertEqual(type(my_place11.user_id), str)
 
+    def test_Place11(self):
+        """ Test of the Place class """
+        my_place12 = Place()
+        self.assertEqual(type(my_place12.amenity_ids), list)
+
     """def test_Place12(self):
         my_place11 = Place()
         my_place12 = Place()

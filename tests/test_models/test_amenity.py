@@ -56,7 +56,7 @@ class TestingAmenity(unittest.TestCase):
         """ Test of the Amenity class """
         my_amenity92 = Amenity()
         my_amenity92.name = "Trent"
-        self.assertTrue(type(my_amenity92), list)
+        self.assertTrue(type(my_amenity92.name), str)
 
     def test_Amenity9(self):
         """ Test of the Amenity class """
