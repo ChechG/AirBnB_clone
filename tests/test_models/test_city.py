@@ -70,7 +70,7 @@ class TestingCity(unittest.TestCase):
         """ Test of the city class """
         self.assertEqual(City, type(City()))
         self.assertEqual(str, type(City().id))
-    
+
     def test_City12N(self):
         """ Test of the city class """
         my_city11 = City()

@@ -77,7 +77,7 @@ class TestingReview(unittest.TestCase):
         """ Test of the city class """
         self.assertEqual(Review, type(Review()))
         self.assertEqual(str, type(Review().id))
-    
+
     def test_Review11N(self):
         """ Test of the city class """
         my_Review11 = Review()

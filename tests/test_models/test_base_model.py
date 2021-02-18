@@ -68,5 +68,10 @@ class TestingBaseModel(unittest.TestCase):
         my_base12 = BaseModel()
         self.assertNotEqual(my_base11.id, my_base12.id)
 
+    def test_Base_id3(self):
+        """ Test of the city class """
+        self.assertEqual(BaseModel, type(BaseModel()))
+        self.assertEqual(str, type(BaseModel().id))
+
 if __name__ == "__main__":
     unittest.main()
