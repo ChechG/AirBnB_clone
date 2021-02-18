@@ -46,10 +46,10 @@ class TestingUser(unittest.TestCase):
         my_user8.last_name = "Reus"
         my_user8.email = "11"
         my_user8.password = "[lis, ta]"
-        self.assertEqual(str(type(my_user8.first_name)), "<class 'str'>")
-        self.assertEqual(str(type(my_user8.last_name)), "<class 'str'>")
-        self.assertEqual(str(type(my_user8.email)), "<class 'str'>")
-        self.assertEqual(str(type(my_user8.password)), "<class 'str'>")
+        self.assertEqual(type(my_user8.first_name), str)
+        self.assertEqual(type(my_user8.last_name), str)
+        self.assertEqual(type(my_user8.email), str)
+        self.assertEqual(type(my_user8.password), str)
 
     def test_User8(self):
         """ Test of the User class """
@@ -57,19 +57,19 @@ class TestingUser(unittest.TestCase):
         my_user9.first_name = "Marco"
         my_user9.last_name = "Reus"
         my_user9.email = "11"
-        my_user9.password = "[lis, ta]"
+        my_user9.password = "password"
         self.assertTrue("first_name" in my_user9.__dict__)
         self.assertTrue("last_name" in my_user9.__dict__)
         self.assertTrue("email" in my_user9.__dict__)
         self.assertTrue("password" in my_user9.__dict__)
 
-    """def test_User9(self):
+    def test_User9(self):
         my_user10 = User()
         self.assertFalse("first" in my_user10.__dict__)
 
     def test_User10(self):
         my_user11 = User()
-        self.assertEqual(str(type(my_user11.id)), "<class 'str'>")"""
+        self.assertEqual(str(type(my_user11.id)), "<class 'str'>")
 
 if __name__ == "__main__":
     unittest.main()
