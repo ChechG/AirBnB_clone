@@ -16,14 +16,10 @@ class TestingUser(unittest.TestCase):
 
     def test_User2(self):
         """ Test of the User class """
-        with self.assertRaises(TypeError):
-            my_user2 = User(1)
-        with self.assertRaises(TypeError):
-            my_user3 = User("hola")
-        with self.assertRaises(TypeError):
-            my_user4 = User([1, 2, 3])
-        with self.assertRaises(TypeError):
-            my_user5 = User({"hola": "chau"})
+        my_user2 = User(1)
+        my_user3 = User("hola")
+        my_user4 = User([1, 2, 3])
+        my_user5 = User({"hola": "chau"})
 
     def test_User3(self):
         """ Test of the User class """
