@@ -100,14 +100,14 @@ class TestingPlace(unittest.TestCase):
         my_place12 = Place()
         self.assertEqual(type(my_place12.amenity_ids), list)
 
-    """def test_Place12(self):
+    def test_Place12(self):
         my_place11 = Place()
         my_place12 = Place()
         self.assertNotEqual(my_place11.id, my_place12.id)
 
     def test_Place13(self):
         self.assertEqual(Place, type(Place()))
-        self.assertEqual(str, type(Place().id))"""
+        self.assertEqual(str, type(Place().id))
 
 if __name__ == "__main__":
     unittest.main()
