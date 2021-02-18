@@ -66,10 +66,11 @@ class TestingBaseModel(unittest.TestCase):
     def test_Save3(self):
         """ Test of the Save func """
         PreData11 = BaseModel()
+        old_date = PreData11.created_at
         PreData11.name = "Sadio"
         PreData11.my_number = 10
         PreData11.save()
-        self.assertEqual(datetime.datetime, type(PreData11.created_at))
+        self.assertEqual(old_date, PreData11.created_at)
 
 if __name__ == "__main__":
     unittest.main()
