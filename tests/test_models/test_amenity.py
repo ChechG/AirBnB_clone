@@ -57,5 +57,10 @@ class TestingAmenity(unittest.TestCase):
         my_amenity10 = Amenity()
         self.assertFalse("first" in my_amenity10.__dict__)
 
+    def test_Amenity10(self):
+        """ Test of the Amenity class """
+        my_amenity11 = Amenity()
+        self.assertEqual(str(type(my_amenity11.id)), "<class 'str'>")
+
 if __name__ == "__main__":
     unittest.main()

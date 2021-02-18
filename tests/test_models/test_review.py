@@ -66,5 +66,10 @@ class TestingReview(unittest.TestCase):
         my_Review10 = Review()
         self.assertFalse("first" in my_Review10.__dict__)
 
+    def test_Review10(self):
+        """ Test of the Amenity class """
+        my_review11 = Review()
+        self.assertEqual(str(type(my_review11.id)), "<class 'str'>")
+
 if __name__ == "__main__":
     unittest.main()

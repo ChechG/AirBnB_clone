@@ -61,5 +61,10 @@ class TestingCity(unittest.TestCase):
         my_City10 = City()
         self.assertFalse("first" in my_City10.__dict__)
 
+    def test_City10(self):
+        """ Test of the Amenity class """
+        my_City11 = City()
+        self.assertEqual(str(type(my_City11.id)), "<class 'str'>")
+
 if __name__ == "__main__":
     unittest.main()

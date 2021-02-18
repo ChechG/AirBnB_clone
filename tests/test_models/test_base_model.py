@@ -57,5 +57,10 @@ class TestingBaseModel(unittest.TestCase):
         self.assertEqual(PreData9.to_dict()["updated_at"],
                          PreData9.updated_at.isoformat())
 
+    def test_Base_id(self):
+        """ Test of the Amenity class """
+        my_base10 = BaseModel()
+        self.assertEqual(str(type(my_base10.id)), "<class 'str'>")
+
 if __name__ == "__main__":
     unittest.main()

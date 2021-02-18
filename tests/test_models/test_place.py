@@ -91,5 +91,10 @@ class TestingPlace(unittest.TestCase):
         my_place10 = Place()
         self.assertEqual(str(type(my_place10.id)), "<class 'str'>")
 
+    def test_Place11(self):
+        """ Test of the Place class """
+        my_place11 = Place()
+        self.assertEqual(str(type(my_place11.id)), "<class 'str'>")
+
 if __name__ == "__main__":
     unittest.main()
