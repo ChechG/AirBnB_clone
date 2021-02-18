@@ -42,10 +42,8 @@ class TestingCity(unittest.TestCase):
     def test_City7(self):
         """ Test of the City class """
         my_City8 = City()
-        my_City8.state_id = "Colorado"
         my_City8.name = "Denver"
         self.assertEqual(type(my_City8.state_id), str)
-        self.assertEqual(my_City8.state_id, "Colorado")
         self.assertEqual(type(my_City8.name), str)
 
     def test_City8(self):

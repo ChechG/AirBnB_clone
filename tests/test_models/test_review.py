@@ -67,7 +67,7 @@ class TestingReview(unittest.TestCase):
         self.assertFalse("first" in my_Review10.__dict__)
 
     def test_Review10(self):
-        """ Test of the Amenity class """
+        """ Test of the Review class """
         my_review11 = Review()
         self.assertEqual(type(my_review11.place_id), str)
         self.assertEqual(type(my_review11.user_id), str)
