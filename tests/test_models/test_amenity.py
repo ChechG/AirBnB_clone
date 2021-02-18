@@ -62,5 +62,11 @@ class TestingAmenity(unittest.TestCase):
         my_amenity11 = Amenity()
         self.assertEqual(type(my_amenity11.id), str)
 
+    def test_Amenity(self):
+        """ Test of the city class """
+        my_amenity12 = Amenity()
+        my_amenity13 = Amenity()
+        self.assertNotEqual(my_amenity12.id, my_amenity13.id)
+
 if __name__ == "__main__":
     unittest.main()
