@@ -18,11 +18,6 @@ class FileStorage:
     __file_path = "file.json"
     __objects = {}
 
-    def __init__(self):
-        """Initializes instance"""
-        self.__file_path = "file.json"
-        self.__objects = {}
-
     def all(self):
         """Returns the dictionary __objects"""
         return self.__objects
@@ -36,6 +31,13 @@ class FileStorage:
 
     def save(self):
         """serializes __objects to a JSON path from __file_path"""
+        if self.__objects:
+            for key25, value25 in self.__objects.items():
+                newdict = value25.copy()
+                for key225, value225 in newdict.items():
+                    if not value225:
+                        del value25[key225]
+                self.__objects[key25] = value25
         new_dict = {}
         for key, value in self.__objects.items():
             new_dict[key] = value
