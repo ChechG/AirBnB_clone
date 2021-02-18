@@ -34,6 +34,15 @@ class TestingBaseModel(unittest.TestCase):
         PreData7.save()
         self.assertNotEqual(PreData7.created_at, PreData7.updated_at)
 
+    def test_Save2(self):
+        """ Test of the Save func """
+        PreData8 = BaseModel()
+        PreData8.name = "Erling"
+        PreData8.my_number = 9
+        old_date = PreData8.created_at
+        PreData8.save()
+        self.assertEqual(str(old_date), str(PreData8.created_at))
+
     def test_to_Dict1(self):
         """ Test of the to_dict func """
         PreData9 = BaseModel()
