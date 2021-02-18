@@ -5,12 +5,6 @@ import os
 import datetime
 
 
-def myconverter(o):
-    """converter from datetime to str"""
-    if isinstance(o, datetime.datetime):
-        return o.__str__()
-
-
 class FileStorage:
     """
     Serializes instances to a JSON file and
