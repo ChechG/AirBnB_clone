@@ -48,3 +48,4 @@ class BaseModel:
             else:
                 dict_returned[key] = value
         return (dict_returned)
+
