@@ -23,7 +23,7 @@ class TestingCity(unittest.TestCase):
 
     def test_City3(self):
         """ Test of the City class """
-        self.assertEqual(str(type(City)), "<class 'type'>")
+        self.assertEqual(type(City), type)
 
     def test_City4(self):
         """ Test of the City class """
@@ -44,9 +44,9 @@ class TestingCity(unittest.TestCase):
         my_City8 = City()
         my_City8.state_id = "Colorado"
         my_City8.name = "Denver"
-        self.assertEqual(str(type(my_City8.state_id)), "<class 'str'>")
+        self.assertEqual(type(my_City8.state_id), str)
         self.assertEqual(my_City8.state_id, "Colorado")
-        self.assertEqual(str(type(my_City8.name)), "<class 'str'>")
+        self.assertEqual(type(my_City8.name), str)
 
     def test_City8(self):
         """ Test of the City class """
@@ -64,7 +64,7 @@ class TestingCity(unittest.TestCase):
     def test_City10(self):
         """ Test of the Amenity class """
         my_City11 = City()
-        self.assertEqual(str(type(my_City11.id)), "<class 'str'>")
+        self.assertEqual(type(my_City11.id), str)
 
 if __name__ == "__main__":
     unittest.main()

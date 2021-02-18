@@ -24,7 +24,7 @@ class TestingBaseModel(unittest.TestCase):
         PreData6.my_number = 7
         self.assertTrue(isinstance(PreData6, BaseModel))
         self.assertTrue(type(PreData6), object)
-        self.assertEqual(str(type(BaseModel)), "<class 'type'>")
+        self.assertEqual(type(BaseModel), type)
 
     def test_Save1(self):
         """ Test of the Save func """
@@ -60,7 +60,7 @@ class TestingBaseModel(unittest.TestCase):
     def test_Base_id(self):
         """ Test of the Amenity class """
         my_base10 = BaseModel()
-        self.assertEqual(str(type(my_base10.id)), "<class 'str'>")
+        self.assertEqual(type(my_base10.id), str)
 
 if __name__ == "__main__":
     unittest.main()

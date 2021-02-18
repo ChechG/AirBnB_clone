@@ -45,9 +45,9 @@ class TestingReview(unittest.TestCase):
         my_Review8.place_id = "Dortmund"
         my_Review8.user_id = "Julian"
         my_Review8.text = "Very nice"
-        self.assertEqual(str(type(my_Review8.place_id)), "<class 'str'>")
-        self.assertEqual(str(type(my_Review8.user_id)), "<class 'str'>")
-        self.assertEqual(str(type(my_Review8.text)), "<class 'str'>")
+        self.assertEqual(type(my_Review8.place_id), str)
+        self.assertEqual(type(my_Review8.user_id), str)
+        self.assertEqual(type(my_Review8.text), str)
         # self.assertEqual(my_Review8.id, "Dortmund")
         # self.assertEqual(my_Review8.id, "Julian")
 
@@ -69,7 +69,9 @@ class TestingReview(unittest.TestCase):
     def test_Review10(self):
         """ Test of the Amenity class """
         my_review11 = Review()
-        self.assertEqual(str(type(my_review11.id)), "<class 'str'>")
+        self.assertEqual(type(my_review11.place_id), str)
+        self.assertEqual(type(my_review11.user_id), str)
+        self.assertEqual(type(my_review11.text), str)
 
 if __name__ == "__main__":
     unittest.main()

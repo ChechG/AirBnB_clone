@@ -24,7 +24,7 @@ class TestingPlace(unittest.TestCase):
 
     def test_Place3(self):
         """ Test of the Place class """
-        self.assertEqual(str(type(Place)), "<class 'type'>")
+        self.assertEqual(type(Place), type)
 
     def test_Place4(self):
         """ Test of the Place class """
@@ -51,15 +51,14 @@ class TestingPlace(unittest.TestCase):
         my_place8.price_by_night = 17
         my_place8.latitude = 53.430180
         my_place8.longitude = -2.926749
-        self.assertEqual(str(type(my_place8.name)), "<class 'str'>")
-        self.assertEqual(str(type(my_place8.description)), "<class 'str'>")
-        self.assertEqual(str(type(my_place8.number_rooms)), "<class 'int'>")
-        self.assertEqual(str(type(my_place8.number_bathrooms)),
-                         "<class 'int'>")
-        self.assertEqual(str(type(my_place8.max_guest)), "<class 'int'>")
-        self.assertEqual(str(type(my_place8.price_by_night)), "<class 'int'>")
-        self.assertEqual(str(type(my_place8.latitude)), "<class 'float'>")
-        self.assertEqual(str(type(my_place8.longitude)), "<class 'float'>")
+        self.assertEqual(type(my_place8.name), str)
+        self.assertEqual(type(my_place8.description), str)
+        self.assertEqual(type(my_place8.number_rooms), int)
+        self.assertEqual(type(my_place8.number_bathrooms), int)
+        self.assertEqual(type(my_place8.max_guest), int)
+        self.assertEqual(type(my_place8.price_by_night), int)
+        self.assertEqual(type(my_place8.latitude), float)
+        self.assertEqual(type(my_place8.longitude), float)
 
     def test_Place8(self):
         """ Test of the Place class """
@@ -89,12 +88,12 @@ class TestingPlace(unittest.TestCase):
     def test_Place10(self):
         """ Test for Place class """
         my_place10 = Place()
-        self.assertEqual(str(type(my_place10.id)), "<class 'str'>")
+        self.assertEqual(type(my_place10.id), str)
 
     def test_Place11(self):
         """ Test of the Place class """
         my_place11 = Place()
-        self.assertEqual(str(type(my_place11.id)), "<class 'str'>")
+        self.assertEqual(type(my_place11.id), str)
 
 if __name__ == "__main__":
     unittest.main()

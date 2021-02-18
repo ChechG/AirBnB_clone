@@ -24,7 +24,7 @@ class TestingAmenity(unittest.TestCase):
 
     def test_Amenity3(self):
         """ Test of the Amenity class """
-        self.assertEqual(str(type(Amenity)), "<class 'type'>")
+        self.assertEqual(type(Amenity), type)
 
     def test_Amenity4(self):
         """ Test of the Amenity class """
@@ -44,7 +44,7 @@ class TestingAmenity(unittest.TestCase):
         """ Test of the Amenity class """
         my_amenity8 = Amenity()
         my_amenity8.name = "Andy"
-        self.assertEqual(str(type(my_amenity8.name)), "<class 'str'>")
+        self.assertEqual(type(my_amenity8.name), str)
 
     def test_Amenity8(self):
         """ Test of the Amenity class """
@@ -60,7 +60,7 @@ class TestingAmenity(unittest.TestCase):
     def test_Amenity10(self):
         """ Test of the Amenity class """
         my_amenity11 = Amenity()
-        self.assertEqual(str(type(my_amenity11.id)), "<class 'str'>")
+        self.assertEqual(type(my_amenity11.id), str)
 
 if __name__ == "__main__":
     unittest.main()
