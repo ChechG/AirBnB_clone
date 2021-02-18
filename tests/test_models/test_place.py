@@ -93,7 +93,7 @@ class TestingPlace(unittest.TestCase):
     def test_Place11(self):
         """ Test of the Place class """
         my_place11 = Place()
-        self.assertEqual(type(my_place11.city_id), str)
+        self.assertEqual(type(my_place11.user_id), str)
 
     """def test_Place12(self):
         my_place11 = Place()
