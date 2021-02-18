@@ -46,10 +46,10 @@ class TestingUser(unittest.TestCase):
         my_user8.last_name = "Reus"
         my_user8.email = "11"
         my_user8.password = "[lis, ta]"
-        self.assertEqual(str(type(my_user8.first_name)), "<class 'str'>")
-        self.assertEqual(str(type(my_user8.last_name)), "<class 'str'>")
-        self.assertEqual(str(type(my_user8.email)), "<class 'str'>")
-        self.assertEqual(str(type(my_user8.password)), "<class 'str'>")
+        self.assertEqual(type(my_user8.first_name), str)
+        self.assertEqual(type(my_user8.last_name), str)
+        self.assertEqual(type(my_user8.email), str)
+        self.assertEqual(type(my_user8.password), str)
 
     def test_User8(self):
         """ Test of the User class """
