@@ -102,7 +102,7 @@ class TestingPlace(unittest.TestCase):
 
     def test_Place13(self):
         self.assertEqual(Place, type(Place()))
-        self.assertEqual(str, type(Place().id))""
+        self.assertEqual(str, type(Place().id))"""
 
 if __name__ == "__main__":
     unittest.main()

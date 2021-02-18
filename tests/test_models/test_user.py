@@ -23,7 +23,7 @@ class TestingUser(unittest.TestCase):
 
     def test_User3(self):
         """ Test of the User class """
-        self.assertEqual(str(type(User)), "<class 'type'>")
+        self.assertEqual(type(User), type)
 
     def test_User4(self):
         """ Test of the User class """
