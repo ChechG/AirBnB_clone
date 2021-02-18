@@ -43,7 +43,7 @@ class TestingState(unittest.TestCase):
         """ Test of the State class """
         my_State8 = State()
         my_State8.name = "Marco"
-        self.assertEqual(str(type(my_State8.name)), "<class 'str'>")
+        self.assertEqual(type(my_State8.name), str)
 
     def test_State8(self):
         """ Test of the State class """
@@ -56,12 +56,12 @@ class TestingState(unittest.TestCase):
         my_State10 = State()
         self.assertFalse("first" in my_State10.__dict__)
 
-    """def test_State10(self):
+    def test_State10(self):
         my_state11 = State()
         my_state12 = State()
         self.assertNotEqual(my_state11.id, my_state12.id)
 
-    def test_State10N(self):
+    """def test_State10N(self):
         self.assertEqual(State, type(State()))
         self.assertEqual(str, type(State().id))"""
 
