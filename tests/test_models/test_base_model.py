@@ -56,5 +56,12 @@ class TestingBaseModel(unittest.TestCase):
         self.assertEqual(PreData9.to_dict()["updated_at"],
                          PreData9.updated_at.isoformat())
 
+    def test_id(self):
+        """ Test of the Save func """
+        PreData10 = BaseModel()
+        PreData10.name = "Firmino"
+        PreData10.my_number = 9
+        self.assertEqual(type(PreData10.id), str)
+
 if __name__ == "__main__":
     unittest.main()
