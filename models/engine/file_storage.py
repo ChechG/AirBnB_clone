@@ -35,8 +35,14 @@ class FileStorage:
                        "." + obj.id] = obj.__dict__
 
     def save(self):
-        """serializes __objects to a JSON path from __file_path
-        """
+        """serializes __objects to a JSON path from __file_path"""
+        if self.__objects:
+            for key25, value25 in self.__objects.items():
+                newdict = value25.copy()
+                for key225, value225 in newdict.items():
+                    if not value225:
+                        del value25[key225]
+                self.__objects[key25] = value25
         new_dict = {}
         for key, value in self.__objects.items():
             new_dict[key] = value

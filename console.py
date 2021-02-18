@@ -3,44 +3,53 @@
 import cmd
 from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
+from models.user import User
+from models.place import Place
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.review import Review
 from models import storage
 import json
- 
+
+
 class HBNBCommand(cmd.Cmd):
     """ class of console commands """
     prompt = "(hbnb) "
- 
+    classes = ["BaseModel", "User", "State", "City",
+               "Amenity", "Place", "Review"]
+
     def do_EOF(self, args):
         """ exit the program """
         print()
         return True
- 
+
     def do_quit(self, args):
         """Quit command to exit the program"""
         return True
-    
+
     def emptyline(self):
         """ Nothing going on """
         pass
- 
+
     def do_create(self, args):
         """ Creates instances of class """
         if not args:
             print("** class name missing **")
-        elif args != self.__class__.__name__:
+        elif args not in self.classes:
             print("** class doesn't exist **")
         else:
-            new = self.__class__.__name__.__init__()
+            new = eval(args)()
             print(new.id)
             new.save()
- 
+
     def do_show(self, args):
         """ Str representation of instances """
         i = args.split()
         if not args:
             print("** class name missing **")
             return
-        elif i[0] != self.__class__.__name__:
+        elif i[0] not in self.classes:
             print("** class doesn't exist **")
             return
         elif len(i) == 1:
@@ -52,14 +61,14 @@ class HBNBCommand(cmd.Cmd):
         else:
             new_obj = storage.all()
             print("[{}] ({}) {}".format(i[0], i[1], new_obj[key_search]))
- 
+
     def do_destroy(self, args):
         """ Deletes instances based on ID """
         i = args.split()
         if not args:
             print("** class name missing **")
             return
-        elif i[0] != self.__class__.__name__:
+        elif i[0] not in self.classes:
             print("** class doesn't exist **")
             return
         elif len(i) == 1:
@@ -76,25 +85,33 @@ class HBNBCommand(cmd.Cmd):
                 del json_data[key_search]
             with open("file.json", mode='w') as my_f:
                 my_f.write(json.dumps(json_data))
- 
+
     def do_all(self, args):
         """ Prints all the str representation of the instances """
-        list_obj=[]
+        list_obj = []
         new_obj = storage.all()
-        if args and args != self.__class__.__name__:
+        if args and args not in self.classes:
             print("** class doesn't exist **")
             return
-        for key, value in new_obj.items():
-            list_obj.append(str(key) + " " + str(value))
+        if args in self.classes:
+            for key, value in new_obj.items():
+                if args in key:
+                    list_obj.append(str(key) + " " + str(value))
+        else:
+            for key, value in new_obj.items():
+                list_obj.append(str(key) + " " + str(value))
         print((list_obj))
-    
+
     def do_update(self, args):
-        """ Updates an instance based on the class name and id by adding or updating attribute """
+        """
+        Updates an instance based on the class name and
+        id by adding or updating attribute
+        """
         i = args.split()
         if not args:
             print("** class name missing **")
             return
-        elif i[0] != self.__class__.__name__:
+        elif i[0] not in self.classes:
             print("** class doesn't exist **")
             return
         elif len(i) == 1:
