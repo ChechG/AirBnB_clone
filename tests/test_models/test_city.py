@@ -42,10 +42,8 @@ class TestingCity(unittest.TestCase):
     def test_City7(self):
         """ Test of the City class """
         my_City8 = City()
-        my_City8.state_id = "Colorado"
         my_City8.name = "Denver"
         self.assertEqual(type(my_City8.state_id), str)
-        self.assertEqual(my_City8.state_id, "Colorado")
         self.assertEqual(type(my_City8.name), str)
 
     def test_City8(self):
@@ -61,18 +59,11 @@ class TestingCity(unittest.TestCase):
         my_City10 = City()
         self.assertFalse("first" in my_City10.__dict__)
 
-    def test_City10(self):
-        """ Test of the Amenity class """
-        my_City11 = City()
-        self.assertEqual(type(my_City11.id), str)
-
     def test_City11N(self):
-        """ Test of the city class """
         self.assertEqual(City, type(City()))
         self.assertEqual(str, type(City().id))
 
     def test_City12N(self):
-        """ Test of the city class """
         my_city11 = City()
         my_city12 = City()
         self.assertNotEqual(my_city11.id, my_city12.id)

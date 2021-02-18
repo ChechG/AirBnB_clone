@@ -88,21 +88,24 @@ class TestingPlace(unittest.TestCase):
     def test_Place10(self):
         """ Test for Place class """
         my_place10 = Place()
-        self.assertEqual(type(my_place10.id), str)
+        self.assertEqual(type(my_place10.city_id), str)
 
     def test_Place11(self):
         """ Test of the Place class """
         my_place11 = Place()
-        self.assertEqual(type(my_place11.id), str)
+        self.assertEqual(type(my_place11.user_id), str)
+
+    def test_Place11(self):
+        """ Test of the Place class """
+        my_place12 = Place()
+        self.assertEqual(type(my_place12.amenity_ids), list)
 
     def test_Place12(self):
-        """ Test of the city class """
         my_place11 = Place()
         my_place12 = Place()
         self.assertNotEqual(my_place11.id, my_place12.id)
 
     def test_Place13(self):
-        """ Test of the city class """
         self.assertEqual(Place, type(Place()))
         self.assertEqual(str, type(Place().id))
 

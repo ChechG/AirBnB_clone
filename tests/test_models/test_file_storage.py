@@ -29,7 +29,7 @@ class TestingFileStorage(unittest.TestCase):
         PreData6.my_number = 7
         self.assertTrue(isinstance(PreData6, FileStorage))
         self.assertTrue(type(PreData6), object)
-        self.assertEqual(str(type(FileStorage)), "<class 'type'>")
+        self.assertEqual(type(FileStorage), type)
 
     def test_new1(self):
         """ Test of the new func """

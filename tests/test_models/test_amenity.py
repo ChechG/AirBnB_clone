@@ -52,6 +52,12 @@ class TestingAmenity(unittest.TestCase):
         my_amenity9.name = "Gini"
         self.assertTrue("name" in my_amenity9.__dict__)
 
+    def test_Amenity8_2(self):
+        """ Test of the Amenity class """
+        my_amenity92 = Amenity()
+        my_amenity92.name = "Trent"
+        self.assertTrue(type(my_amenity92.name), str)
+
     def test_Amenity9(self):
         """ Test of the Amenity class """
         my_amenity10 = Amenity()

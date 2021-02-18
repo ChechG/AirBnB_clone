@@ -24,7 +24,7 @@ class TestingBaseModel(unittest.TestCase):
         PreData6.my_number = 7
         self.assertTrue(isinstance(PreData6, BaseModel))
         self.assertTrue(type(PreData6), object)
-        self.assertEqual(str(type(BaseModel)), "<class 'type'>")
+        self.assertEqual(type(BaseModel), type)
 
     def test_Save1(self):
         """ Test of the Save func """
@@ -40,8 +40,7 @@ class TestingBaseModel(unittest.TestCase):
         PreData8.name = "Erling"
         PreData8.my_number = 9
         old_date = PreData8.created_at
-        PreData8.save()
-        self.assertEqual(str(old_date), PreData8.created_at)
+        self.assertEqual(str(old_date), str(PreData8.created_at))
 
     def test_to_Dict1(self):
         """ Test of the to_dict func """
@@ -56,6 +55,22 @@ class TestingBaseModel(unittest.TestCase):
                          PreData9.created_at.isoformat())
         self.assertEqual(PreData9.to_dict()["updated_at"],
                          PreData9.updated_at.isoformat())
+
+    def test_id(self):
+        """ Test of the Save func """
+        PreData10 = BaseModel()
+        PreData10.name = "Firmino"
+        PreData10.my_number = 9
+        self.assertEqual(type(PreData10.id), str)
+
+    def test_Save3(self):
+        """ Test of the Save func """
+        PreData11 = BaseModel()
+        PreData11.name = "Sadio"
+        PreData11.my_number = 10
+        old_date = PreData11.created_at
+        PreData11.save()
+        self.assertEqual(str(old_date), str(PreData11.created_at))
 
 if __name__ == "__main__":
     unittest.main()

@@ -7,7 +7,7 @@ from models import storage
 
 
 class BaseModel:
-    """Defines all common attributes/methods for other classes"""
+    """Defines all common attr/methods for other classes"""
 
     def __init__(self, *args, **kwargs):
         """Initializes object"""
