@@ -62,5 +62,10 @@ class TestingState(unittest.TestCase):
         my_state12 = State()
         self.assertNotEqual(my_state11.id, my_state12.id)
 
+    def test_State10N(self):
+        """ Test of the city class """
+        self.assertEqual(State, type(State()))
+        self.assertEqual(str, type(State().id))
+
 if __name__ == "__main__":
     unittest.main()
