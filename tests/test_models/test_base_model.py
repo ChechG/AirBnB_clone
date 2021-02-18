@@ -68,9 +68,8 @@ class TestingBaseModel(unittest.TestCase):
         PreData11 = BaseModel()
         PreData11.name = "Sadio"
         PreData11.my_number = 10
-        old_date = PreData11.created_at
         PreData11.save()
-        self.assertEqual(str(old_date), PreData11.created_at)
+        self.assertEqual(str, type(PreData11.created_at))
 
 if __name__ == "__main__":
     unittest.main()
