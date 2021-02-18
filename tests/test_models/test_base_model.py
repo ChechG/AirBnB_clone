@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """ Tests for BaseModel class """
- 
- 
+
+
 import unittest
 import datetime
 from models.base_model import BaseModel
- 
- 
+
+
 class TestingBaseModel(unittest.TestCase):
     """ BaseModel class - tests """
     def test_PreData1(self):
@@ -16,7 +16,7 @@ class TestingBaseModel(unittest.TestCase):
         PreData3 = BaseModel()
         Predata4 = BaseModel({"hola": "chau"})
         PreData5 = BaseModel([1, 2, 3])
-    
+
     def test_PreData2(self):
         """ Test of the PreData """
         PreData6 = BaseModel()
@@ -25,7 +25,7 @@ class TestingBaseModel(unittest.TestCase):
         self.assertTrue(isinstance(PreData6, BaseModel))
         self.assertTrue(type(PreData6), object)
         self.assertEqual(str(type(BaseModel)), "<class 'type'>")
- 
+
     def test_Save1(self):
         """ Test of the Save func """
         PreData7 = BaseModel()
@@ -33,7 +33,7 @@ class TestingBaseModel(unittest.TestCase):
         PreData7.my_number = 4
         PreData7.save()
         self.assertNotEqual(PreData7.created_at, PreData7.updated_at)
- 
+
     def test_Save2(self):
         """ Test of the Save func """
         PreData8 = BaseModel()
@@ -42,7 +42,7 @@ class TestingBaseModel(unittest.TestCase):
         old_date = PreData8.created_at
         PreData8.save()
         self.assertEqual(str(old_date), PreData8.created_at)
- 
+
     def test_to_Dict1(self):
         """ Test of the to_dict func """
         PreData9 = BaseModel()
@@ -52,9 +52,10 @@ class TestingBaseModel(unittest.TestCase):
         self.assertEqual(PreData9.to_dict()["my_number"], PreData9.my_number)
         self.assertEqual(PreData9.to_dict()["name"], PreData9.name)
         self.assertEqual(PreData9.to_dict()["__class__"], "BaseModel")
-        self.assertEqual(PreData9.to_dict()["created_at"], PreData9.created_at.isoformat())
-        self.assertEqual(PreData9.to_dict()["updated_at"], PreData9.updated_at.isoformat())
- 
- 
+        self.assertEqual(PreData9.to_dict()["created_at"],
+                         PreData9.created_at.isoformat())
+        self.assertEqual(PreData9.to_dict()["updated_at"],
+                         PreData9.updated_at.isoformat())
+
 if __name__ == "__main__":
     unittest.main()
