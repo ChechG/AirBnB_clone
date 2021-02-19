@@ -6,6 +6,7 @@ from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
 from models.user import User
 import models
+import pep8
 
 
 class TestingUser(unittest.TestCase):
@@ -70,6 +71,36 @@ class TestingUser(unittest.TestCase):
     def test_User10(self):
         my_user11 = User()
         self.assertEqual(str(type(my_user11.id)), "<class 'str'>")
+
+    def test_User11(self):
+        my_user12 = User()
+        self.assertTrue(hasattr(my_user12, "__init__"))
+        self.assertTrue(hasattr(my_user12, "created_at"))
+        self.assertTrue(hasattr(my_user12, "updated_at"))
+        self.assertTrue(hasattr(my_user12, "id"))
+
+    def test_User12(self):
+        """Tests str"""
+        my_user13 = User()
+        my_user13printed = my_user13.__str__()
+        self.assertEqual(my_user13printed,
+                         "[User] ({}) {}".format(my_user13.id, my_user13.__dict__))
+
+    def test_init_kwargs(self):
+        """instance with kwargs"""
+        my_user14 = User(name="Silver")
+        self.assertEqual(type(my_user14).__name__, "User")
+        self.assertTrue(hasattr(my_user14, "name"))
+        self.assertFalse(hasattr(my_user14, "id"))
+        self.assertFalse(hasattr(my_user14, "created_at"))
+        self.assertFalse(hasattr(my_user14, "updated_at"))
+        self.assertTrue(hasattr(my_user14, "__class__"))
+
+    def test_pep8(self):
+        """pep8 tests"""
+        style = pep8.StyleGuide(quiet=True)
+        result = style.check_files(['models/user.py'])
+        self.assertEqual(result.total_errors, 0, "pep8")
 
 if __name__ == "__main__":
     unittest.main()
