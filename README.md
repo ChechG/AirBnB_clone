@@ -1,21 +1,23 @@
 # --- AirBnB_clone ---
 
-# Background context
+![alt text](https://miro.medium.com/max/2400/0*NChTo-XqLOxLabIW)
 
-**Welcome to the AirBnB clone project! (The Holberton B&B)**
+**Welcome to our AirBnB clone project! (The Holberton B&B)**
 
-**First step: Write a command interpreter to manage your AirBnB objects.**
-This is the first step towards building your first full web application: the AirBnB clone. This first step is very important because you will use what you build during this project with all other following projects: HTML/CSS templating, database storage, API, front-end integration…
+**General**
+-------------
+As a first step we were asked to write a command interpreter to manage our AirBnB objects. This is the first step towards building our first complete web application: the AirBnB clone. This first step was very important because you will use what we created during this project with all the other projects below: HTML / CSS templates, database storage, API, front-end integration ...
 
-Each task is linked and will help you to:
+The tasks we carried out were:
 
-put in place a parent class (called BaseModel) to take care of the initialization, serialization and deserialization of your future instances
-create a simple flow of serialization/deserialization: Instance <-> Dictionary <-> JSON string <-> file
-create all classes used for AirBnB (User, State, City, Place…) that inherit from BaseModel
-create the first abstracted storage engine of the project: File storage.
-create all unittests to validate all our classes and storage engine
+Create a main class (called BaseModel) that takes care of the initialization, serialization, and deserialization of new instances.
+We create a simple serialization / deserialization flow: Instance <-> Dictionary <-> JSON String <-> file
+We create all the classes used for AirBnB (user, state, city, place ...) that all inherit from BaseModel
+We create a storage engine to be able to save data.
+We create all the unit tests to validate all our classes and storage engine.
 
 **What’s a command interpreter?**
+-------------
 Do you remember the Shell? It’s exactly the same but limited to a specific use-case. In our case, we want to be able to manage the objects of our project:
 
    - Create a new object (ex: a new User or a new Place)
@@ -24,23 +26,70 @@ Do you remember the Shell? It’s exactly the same but limited to a specific use
    - Update attributes of an object
    - Destroy an object
 
-# Learning Objectives
-       At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
+**How to use the interpreter?**
+-------------
+Usage in interactive mode:
+```
+$ ./console.py
+```
+This: displays a message:
+```
+(hbnb)
+```
+and waits for the user to type a command. A command line always ends with a new line. The prompt is displayed again each time a command is executed.
 
-# General
-        How to create a Python package
-        How to create a command interpreter in Python using the cmd module
-        What is Unit testing and how to implement it in a large project
-        How to serialize and deserialize a Class
-        How to write and read a JSON file
-        How to manage datetime
-        What is an UUID
-        What is *args and how to use it
-        What is **kwargs and how to use it
-        How to handle named arguments in a function
+and in non-interactive mode:
+```
+$ echo "help" | ./console.py
+(hbnb)
+Documented commands (type help <topic>):
+========================================
+EOF  all  create  destroy  help  quit  show  update
+
+(hbnb)
+```
+Here is a simple example of how to use our console
+```
+(hbnb) create BaseModel
+de2630a8-7556-4e6d-8b55-8b0a4ba8082d
+(hbnb) show BaseModel de2630a8-7556-4e6d-8b55-8b0a4ba8082d
+[BaseModel] (de2630a8-7556-4e6d-8b55-8b0a4ba8082d) {'updated_at': datetime.datetime(2021, 2, 18, 18, 4, 12, 756946), 'created_at': datetime.datetime(2021, 2, 18, 18, 4, 12, 75683\
+6), 'id': 'de2630a8-7556-4e6d-8b55-8b0a4ba8082d'}
+(hbnb) quit
+```
+
+# Files and folders
+- models
+    - engine
+        - __init__.py
+        - file_storage.py
+    - __init__.py
+    - amenity.py
+    - base_model.py
+    - city.py
+    - place.py
+    - review.py
+    - state.py
+    - user.py
+    - tests
+        - __init__.py
+        - test_models
+            - __init__.py
+            - test_amenity.py
+            - test_base_model.py
+            - test_city.py
+            - test_file_storage.py
+            - test_place.py
+            - test_review.py
+            - test_state.py
+            - test_user.py
+- console.py
+- README.md
+- AUTHORS
+- airbnbimage.png
 
 # Requirements
-
+-------------
 **Python Scripts**
    - Allowed editors: vi, vim, emacs
    - All your files will be interpreted/compiled on Ubuntu 14.04 LTS using python3 (version 3.4.3)
@@ -72,48 +121,7 @@ Do you remember the Shell? It’s exactly the same but limited to a specific use
    - All your functions (inside and outside a class) should have a documentation (python3 -c 'print(__import__("my_module").my_function.__doc__)' and python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)')
    - We strongly encourage you to work together on test cases, so that you don’t miss any edge case
 
-# Github
-There should be one project repository per group. If you clone/fork/whatever a project repository with the same name before the second deadline, you risk a 0% score.
-
-# More Info
-**Execution**
-```
-        Your shell should work like this in interactive mode:
-
-        $ ./console.py
-        (hbnb) help
-
-        Documented commands (type help <topic>):
-        ========================================
-        EOF  help  quit
-
-        (hbnb) 
-        (hbnb) 
-        (hbnb) quit
-        $
-```
-But also in non-interactive mode: (like the Shell project in C)
-```
-        $ echo "help" | ./console.py
-        (hbnb)
-
-        Documented commands (type help <topic>):
-        ========================================
-        EOF  help  quit
-        (hbnb) 
-        $
-        $ cat test_help
-        help
-        $
-        $ cat test_help | ./console.py
-        (hbnb)
-
-        Documented commands (type help <topic>):
-        ========================================
-        EOF  help  quit
-        (hbnb) 
-        $
-```
-# Tasks:
-
-# Advanced.
+# Authors
+Made by [Cecilia Giudice](https://github.com/ChechG)
+and [Tadeo Grach](https://github.com/tadeograch)
+to Holberton School 2021
