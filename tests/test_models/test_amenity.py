@@ -88,10 +88,11 @@ class TestingAmenity(unittest.TestCase):
 
     def test_Amenity14(self):
         """Tests amenity"""
+        s = "[Amenity] ({}) {}"
         my_amenity14 = Amenity()
         my_amenity14printed = my_amenity14.__str__()
         self.assertEqual(my_amenity14printed,
-                         "[Amenity] ({}) {}".format(my_amenity14.id, my_amenity14.__dict__))
+                         s.format(my_amenity14.id, my_amenity14.__dict__))
 
     def test_hasattribute(self):
         """Tests amenity"""
