@@ -6,6 +6,7 @@ from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
 from models.city import City
 import models
+import pep8
 
 
 class TestingCity(unittest.TestCase):
@@ -67,6 +68,37 @@ class TestingCity(unittest.TestCase):
         my_city11 = City()
         my_city12 = City()
         self.assertNotEqual(my_city11.id, my_city12.id)
+
+    def test_pep8(self):
+        """pep8"""
+        style = pep8.StyleGuide(quiet=True)
+        result = style.check_files(['models/city.py'])
+        self.assertEqual(result.total_errors, 0, "fix pep8")
+
+    def test_City13N(self):
+        """kwargs"""
+        my_city13 = City(name="Denver")
+        self.assertEqual(type(my_city13).__name__, "City")
+        self.assertTrue(hasattr(my_city13, "name"))
+        self.assertFalse(hasattr(my_city13, "id"))
+        self.assertFalse(hasattr(my_city13, "created_at"))
+        self.assertFalse(hasattr(my_city13, "updated_at"))
+        self.assertTrue(hasattr(my_city13, "__class__"))
+
+    def test_City14N(self):
+        """str"""
+        my_city14 = City()
+        my_city14printed = my_city14.__str__()
+        self.assertEqual(my_city14printed,
+                         "[City] ({}) {}".format(my_city14.id, my_city14.__dict__))
+
+    def test_City15N(self):
+        """Tests """
+        my_city15 = City()
+        self.assertTrue(hasattr(my_city15, "__init__"))
+        self.assertTrue(hasattr(my_city15, "created_at"))
+        self.assertTrue(hasattr(my_city15, "updated_at"))
+        self.assertTrue(hasattr(my_city15, "id"))
 
 if __name__ == "__main__":
     unittest.main()
