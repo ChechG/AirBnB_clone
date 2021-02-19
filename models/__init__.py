@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""raja de aca"""
+"""models init"""
 from models.engine.file_storage import FileStorage
 
 storage = FileStorage()
