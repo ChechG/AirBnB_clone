@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""raja de aca"""
+"""File storage class"""
 import json
 import os
 import datetime
