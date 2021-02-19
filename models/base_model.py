@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""raja de aca"""
+"""Base model class"""
 import uuid
 from datetime import datetime
 import csv
