@@ -154,10 +154,11 @@ class TestingBaseModel(unittest.TestCase):
 
     def test_str_method(self):
         """str"""
+        s = "[BaseModel] ({}) {}"
         my_base25 = BaseModel()
         my_base25printed = my_base25.__str__()
         self.assertEqual(my_base25printed,
-                         "[BaseModel] ({}) {}".format(my_base25.id, my_base25.__dict__))
+                         s.format(my_base25.id, my_base25.__dict__))
 
 if __name__ == "__main__":
     unittest.main()
