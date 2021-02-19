@@ -70,10 +70,11 @@ class TestingState(unittest.TestCase):
 
     def test_str_method(self):
         """str"""
+        s = "[State] ({}) {}"
         my_state14 = State()
         my_state14printed = my_state14.__str__()
         self.assertEqual(my_state14printed,
-                         "[State] ({}) {}".format(my_state14.id, my_state14.__dict__))
+                         s.format(my_state14.id, my_state14.__dict__))
 
     def test_State12(self):
         """Tests if the instance of BaseModel has been correctly made"""
@@ -82,8 +83,6 @@ class TestingState(unittest.TestCase):
         self.assertTrue(hasattr(my_state15, "created_at"))
         self.assertTrue(hasattr(my_state15, "updated_at"))
         self.assertTrue(hasattr(my_state15, "id"))
-
-
 
     def test_State11(self):
         """kwargs"""
