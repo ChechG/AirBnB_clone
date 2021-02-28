@@ -62,3 +62,52 @@
 .icon_bathroom{
 	background-image: url("../images/icon_bath.png")
 }
+article > .amenities, article > .reviews{
+	margin-top: 40px;
+	width: 100%;
+	height: auto;
+	float: none;
+}
+article > .amenities ul, article > .reviews ul{
+	padding: 0;
+}
+article > .amenities h2, article > .reviews h2{
+	font-size: 16px;
+	border-bottom: solid #DDDDDD 1px;
+	text-align: left;
+	padding-bottom: 7px;
+}
+article > .amenities li, article > .reviews li{
+	list-style-type: none;
+}
+article > .amenities li{
+	margin-top: 15px;
+}
+article > .amenities h2{
+	font-size: 16px;
+}
+article > .reviews h3{
+	font-size: 14px;
+}
+article > .reviews p{
+	font-size: 12px;
+}
+.pet_icon, .tv_icon, .wifi_icon, .kidnaper{
+	width: 20px;
+	height: 20px;
+	background-size: cover;
+	float: left;
+	margin-right: 15px;
+}
+.pet_icon{
+	background-image: url("../images/icon_pets.png");
+}
+.tv_icon{
+	background-image: url("../images/icon_tv.png");
+}
+.wifi_icon{
+	background-image: url("../images/icon_wifi.png");
+}
+.kidnaper{
+	background-image: url("../images/icon_group.png")
+}
